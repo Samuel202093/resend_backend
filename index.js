@@ -14,17 +14,9 @@ app.use(cors())
 
 app.use(bodyParser.json())
 
-app.get('/api/v1', (req, res)=>{
-    try {
-        res.status(200).send('Testing api')
-    } catch (error) {
-        res.status(500).send('testing server api')
-    }
-})
-
 app.get('/tests', (req, res)=>{
     try {
-        res.status(200).send('Hello welcome to my site')
+        res.status(200).send('Hello World')
     } catch (error) {
         res.status(500).send(error)
     }
@@ -35,7 +27,8 @@ app.post('/api/v1', async(req, res)=>{
     try {
         const { name, email, message } = req.body
         const result = await resend.emails.send({
-             from: "onboarding@resend.dev",
+            //  from: "onboarding@resend.dev",
+             from: "portfolio@resend.dev",
              to: "onyebuekes93@gmail.com",
              subject: 'Message from portfolio contact form',
              reply_to: email,
