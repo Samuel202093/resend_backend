@@ -33,13 +33,13 @@ app.get('/tests', (req, res)=>{
 
 app.post('/api/v1', async(req, res)=>{
     try {
-        const { email, message } = req.body
+        const { name, email, message } = req.body
         const result = await resend.emails.send({
              from: "onboarding@resend.dev",
              to: "onyebuekes93@gmail.com",
              subject: 'Message from portfolio contact form',
              reply_to: email,
-             text: message
+             text: `Sender:${name} and Message:${message} `
              })
 
              res.status(200).send(result)
