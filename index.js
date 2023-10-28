@@ -22,6 +22,14 @@ app.get('/api/v1', (req, res)=>{
     }
 })
 
+app.get('/tests', (req, res)=>{
+    try {
+        res.status(200).send('Hello welcome to my site')
+    } catch (error) {
+        res.status(500).send(error)
+    }
+})
+
 
 app.post('/api/v1', async(req, res)=>{
     try {
