@@ -32,7 +32,7 @@ app.post('/api/v1', async(req, res)=>{
              to: "onyebuekes93@gmail.com",
              subject: 'Message from portfolio contact form',
              reply_to: email,
-             text: `Sender:${name} and <br/> Message:${message} `
+             text: `Sender:${name} and Message:${message} `
              })
 
              res.status(200).send(result)
